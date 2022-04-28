@@ -4,7 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Running the app
 
-Change the filename .env.sample to .env
+Change the filename `.env.sample` to `.env`
 run `npm install` and `npm start`
 
 ## Available Scripts
