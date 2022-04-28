@@ -5,6 +5,7 @@ import fetchData from '../../utils/fetchData';
 
 import { setComments, setPrevComments, setNextComments, getPreloadComments, constants } from './actions';
 import { getNumberOfPosts, getPostsStore, getCurrentPostId } from '../PostsSlider/selectors';
+import { PostItem } from '../../apiResponseTypes';
 
 function* getCurrentComments(action: AnyAction): any {
 
@@ -25,7 +26,7 @@ function* preloadComments(): any {
   const currentPostId = yield select(getCurrentPostId);
   const posts = yield select(getPostsStore);
 
-  const currentPostIndex = posts.findIndex((post: any) => post.id === currentPostId);
+  const currentPostIndex = posts.findIndex((post: PostItem) => post.id === currentPostId);
 
   const nextPostIndex = (currentPostIndex + 1) % numOfPosts;
   const prevPostIndex = (currentPostIndex - 1 + numOfPosts) % numOfPosts;
